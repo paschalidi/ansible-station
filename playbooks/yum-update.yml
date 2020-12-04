@@ -1,0 +1,9 @@
+---
+  - hosts: webservers:loadbalancers
+    become: true
+    tasks:
+      - name: Update all yum packages apache
+        yum:
+          name: '*'
+          state: latest
+
